@@ -1,6 +1,6 @@
-import Head from 'next/head'
-import Layout, { siteTitle } from '../components/layout'
-import utilStyles from '../styles/utils.module.css'
+import Head from "next/head";
+import Layout, { siteTitle } from "../components/layout";
+import utilStyles from "../styles/utils.module.css";
 
 export default function Home() {
   return (
@@ -9,12 +9,13 @@ export default function Home() {
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>[Your Self Introduction]</p>
+        <p>프론트엔드 주니어 개발자 현징입니다 :D</p>
+        <p>주로 겪은 일들과 깨닳은 점들에 대해 업로드합니다.</p>
         <p>
-          (This is a sample website - you’ll be building a site like this in{' '}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
+          WIL + 공부 정리는{" "}
+          <a href="https://zinnli.github.io/">이 곳에 있습니다</a>
         </p>
       </section>
     </Layout>
-  )
+  );
 }
