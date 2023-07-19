@@ -1,13 +1,20 @@
+import Link from "next/link";
+import React from "react";
 import Head from "next/head";
 import Image from "next/image";
+
 import styles from "./layout.module.css";
 import utilStyles from "../styles/utils.module.css";
-import Link from "next/link";
+
+interface LayoutProps {
+  children: any;
+  home?: any;
+}
 
 const name = "현징-로그";
 export const siteTitle = "프론트엔드 개발자 현징입니다 :D";
 
-export default function Layout({ children, home }) {
+export default function Layout({ children, home }: LayoutProps) {
   return (
     <div className={styles.container}>
       <Head>

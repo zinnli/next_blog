@@ -2,7 +2,7 @@ import React from "react";
 import Layout from "../../components/layout";
 import { getAllPostIds, getPostData } from "../../lib/posts";
 
-export default function Post({ postData }) {
+export default function Post({ postData }: any) {
   return (
     <Layout>
       {postData.title}
@@ -24,7 +24,7 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params }: any) {
   // Add the "await" keyword like this:
   const postData = await getPostData(params.id);
 
