@@ -1,14 +1,13 @@
-import Link from "next/link";
 import React from "react";
+import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
 
-import styles from "./layout.module.css";
-import utilStyles from "../styles/utils.module.css";
+import * as S from "./layout.styled";
 
 interface LayoutProps {
-  children: any;
-  home?: any;
+  children: React.ReactNode;
+  home?: boolean;
 }
 
 const name = "현징-로그";
@@ -16,7 +15,7 @@ export const siteTitle = "프론트엔드 개발자 현징입니다 :D";
 
 export default function Layout({ children, home }: LayoutProps) {
   return (
-    <div className={styles.container}>
+    <S.Container>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -32,18 +31,17 @@ export default function Layout({ children, home }: LayoutProps) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className={styles.header}>
+      <S.Header>
         {home ? (
           <>
             <Image
               priority
               src="/images/profile.jpeg"
-              className={utilStyles.borderCircle}
               height={144}
               width={144}
               alt={name}
             />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
+            <h1>{name}</h1>
           </>
         ) : (
           <>
@@ -51,26 +49,23 @@ export default function Layout({ children, home }: LayoutProps) {
               <Image
                 priority
                 src="/images/profile.jpeg"
-                className={utilStyles.borderCircle}
                 height={108}
                 width={108}
                 alt={name}
               />
             </Link>
-            <h2 className={utilStyles.headingLg}>
-              <Link href="/" className={utilStyles.colorInherit}>
-                {name}
-              </Link>
+            <h2>
+              <Link href="/">{name}</Link>
             </h2>
           </>
         )}
-      </header>
+      </S.Header>
       <main>{children}</main>
       {!home && (
-        <div className={styles.backToHome}>
+        <S.BackBtnWrapper>
           <Link href="/">← Back to home</Link>
-        </div>
+        </S.BackBtnWrapper>
       )}
-    </div>
+    </S.Container>
   );
 }
