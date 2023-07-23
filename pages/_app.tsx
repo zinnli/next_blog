@@ -11,6 +11,7 @@ const App: NextComponentType<AppContext, AppInitialProps, AppLayoutProps> = ({
   pageProps,
 }: AppLayoutProps) => {
   const getLayout = Component.getLayout ?? ((page: ReactElement) => page);
+
   return (
     <>
       <Global styles={globalStyles} />

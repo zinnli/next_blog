@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Layout } from "@/components";
+import { PostContainer } from "@/components";
 import { getAllPostIds, getPostData } from "../../lib/posts";
 
 interface PostProps {
@@ -8,16 +8,7 @@ interface PostProps {
 }
 
 export default function Post({ postData }: PostProps) {
-  return (
-    <Layout>
-      {postData.title}
-      <br />
-      {postData.id}
-      <br />
-      {postData.date}
-      <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-    </Layout>
-  );
+  return <PostContainer postData={postData} />;
 }
 
 export async function getStaticPaths() {

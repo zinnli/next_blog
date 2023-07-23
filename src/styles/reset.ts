@@ -126,9 +126,9 @@ export const resetCss = css`
   }
   body {
     color: #222;
-    font-family: "SlowSlow", system-ui;
-    font-size: 2.6rem;
-    line-height: 1;
+    font-family: "iceHimchan-Rg", system-ui;
+    font-size: 1.8rem;
+    line-height: 2.5rem;
     background-color: #fff;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

@@ -1,21 +1,21 @@
 import { Layout, Posts } from "@/components";
 import { getSortedPostsData } from "../../lib/posts";
 
-const PostList = ({ allPostsData }) => {
+const PostLists = ({ posts }) => {
   return (
     <Layout>
-      <Posts allPostsData={allPostsData} />
+      <Posts posts={posts} />
     </Layout>
   );
 };
 
-export default PostList;
+export default PostLists;
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
+  const posts = getSortedPostsData();
   return {
     props: {
-      allPostsData,
+      posts,
     },
   };
 }

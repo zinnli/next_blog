@@ -4,21 +4,21 @@ import Link from "next/link";
 import * as S from "./Posts.styled";
 
 interface PostsProps {
-  allPostsData: { [key: string]: string }[];
+  posts: { [key: string]: string }[];
 }
 
-const Posts = ({ allPostsData }: PostsProps) => {
+const Posts = ({ posts }: PostsProps) => {
   const [state, setState] = useState([]);
 
   useEffect(() => {
-    if (allPostsData) {
-      setState(allPostsData);
+    if (posts) {
+      setState(posts);
     }
   }, []);
 
   return (
     <S.Section>
-      <S.Heading>Blog</S.Heading>
+      <S.Heading>Post</S.Heading>
       <ul>
         {state.map(({ id, date, title }) => {
           return (
